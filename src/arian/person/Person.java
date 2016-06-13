@@ -10,7 +10,7 @@ public abstract class Person {
     }
 
     public String pronounceNameLikeBond(){
-        String firstName = this.name.getName("first"),
+        String lastName = this.name.getName("last"),
             fullName = this.name.getName("full");
 
         return lastName + ", " + fullName + ".";
