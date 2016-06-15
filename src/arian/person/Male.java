@@ -10,4 +10,11 @@ public class Male extends Person {
             Gender.MALE
             );
     }
+
+    public String pronounceNameLikeBond(){
+        String lastName = this.name.getName("last"),
+            fullName = this.name.getName("full");
+
+        return lastName + ", " + fullName + ".";
+    }
 }

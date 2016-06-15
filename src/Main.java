@@ -9,12 +9,11 @@ public class Main {
     public static void main(String[] args){
         Male testMale = new Male();
 
-        System.out.printf( "a sum: %d.%n", Maths.sum(1, 2, 3, 4, 5, 100));
         System.out.printf( 
-            "%s %s, I presume.%n", 
+            "Bartender:\t %s %s, I presume.%n", 
             testMale.gender.honorific,
             testMale.name.toString() 
             );
-        System.out.printf("%s", testMale.pronounceNameLikeBond());
+        System.out.printf("%s:\t\t %s", testMale.name.getName("first"), testMale.pronounceNameLikeBond());
     }
 }
