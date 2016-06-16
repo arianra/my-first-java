@@ -5,11 +5,11 @@ import java.util.stream.*;
 
 public class Maths {
 
-    public static int sum(int x, int y){
+    public static <N> N sum(N x, N y){
         return x + y;
     }
-    public static int sum(int ... summables){
-        return IntStream.of(summables).reduce(0, Maths::sum);
+    public static <N> N sum(N ... summables){
+        return Stream.of(summables).reduce(new N(0), Maths::sum);
     }
 
 }
