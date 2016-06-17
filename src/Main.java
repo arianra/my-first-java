@@ -10,7 +10,7 @@ import java.lang.reflect.*;
 public class Main {
 
     public static void main(String[] args){
-        Male testMale = new Male();
+        Male male = new Male();
 
         System.out.printf( "------- %s -------%n", Main.quickDateNow());
         
@@ -19,9 +19,8 @@ public class Main {
         nogIets.add( 0 );
 
         try {
-            Constructor foo = Class.forName("arian.person.Male").getDeclaredConstructor();
-            Male bar = (Male)foo.newInstance();
-            System.out.println("hoi " + bar.pronounceNameLikeBond());
+            Constructor maleCtor = Class.forName("arian.person.Male").getDeclaredConstructor();
+            male = (Male)maleCtor.newInstance();
         }
         catch(ClassNotFoundException x){
             System.out.println(x);
@@ -38,16 +37,14 @@ public class Main {
         catch (IllegalAccessException x) {
             System.out.println(x);	    
         }
-        
-        //System.out.printf("?? %d%n", hoi.apply( nogIets ));
-        System.out.println(Texts.parseAcronyms("Een lange Naam"));
 
         System.out.printf( 
-            "Bartender:\t %s %s, I presume.%n", 
-            testMale.gender.honorific,
-            testMale.name.toString() 
+            "%s\t %s %s, I presume.%n", 
+            Texts.parseAcronyms("Sean Pierre"),
+            male.gender.honorific,
+            male.name.toString() 
             );
-        System.out.printf("%s:\t\t %s%n", testMale.name.getName("first"), testMale.pronounceNameLikeBond());
+        System.out.printf("%s:\t %s%n", male.name.getName("initials"), male.pronounceNameLikeBond());
 
         System.out.printf( "------- %s -------%n", Main.quickDateNow());
 

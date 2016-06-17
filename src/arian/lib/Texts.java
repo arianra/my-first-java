@@ -16,7 +16,7 @@ public class Texts {
         String trimmedText = text.trim();
         
         if( ~trimmedText.indexOf(" ") == 0 ) {
-            return new ArrayList( Texts.getFirstChar( trimmedText ));
+            return Arrays.asList( Texts.getFirstChar( trimmedText ));
         }
 
         return Stream.of( trimmedText.split("\\s") )
@@ -24,16 +24,16 @@ public class Texts {
             .collect( Collectors.toCollection(ArrayList::new) );
     }
 
-    public static Object parseAcronyms(List<Character> acronyms, String seperator){
+    public static String parseAcronyms(List<Character> acronyms, String seperator){
         return acronyms.stream()
             .map( Character::toUpperCase )
             .map(Object::toString)
             .collect( Collectors.joining(seperator) );
     }
-    public static Object parseAcronyms( List<Character> acronyms ){
+    public static String parseAcronyms( List<Character> acronyms ){
         return Texts.parseAcronyms( acronyms, "." );
     }
-    public static Object parseAcronyms(String text){
+    public static String parseAcronyms(String text){
         return Texts.parseAcronyms( Texts.getAcronymList(text) );
     }
 }
