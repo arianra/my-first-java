@@ -19,8 +19,8 @@ public class Main {
         nogIets.add( 0 );
 
         try {
-            Constructor maleCtor = Class.forName("arian.person.Male").getDeclaredConstructor();
-            male = (Male)maleCtor.newInstance();
+            Constructor maleCtor = Class.forName("arian.person.Male").getDeclaredConstructor(Name.class);
+            male = (Male)maleCtor.newInstance(new Name("a","b"));
         }
         catch(ClassNotFoundException x){
             System.out.println(x);
