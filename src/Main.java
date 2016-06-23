@@ -20,23 +20,13 @@ public class Main {
 
         try {
             Constructor maleCtor = Class.forName("arian.person.Male").getDeclaredConstructor(Name.class);
-            male = (Male)maleCtor.newInstance(new Name("a","b"));
+            male = (Male)maleCtor.newInstance(new Name("Jan Willem","Naaktgeboren"));
         }
-        catch(ClassNotFoundException x){
-            System.out.println(x);
-        }
-        catch(NoSuchMethodException x) {
-            System.out.println(x);
-        }
-        catch (InstantiationException x) {
-            System.out.println(x); 	    
-        } 
-        catch (InvocationTargetException x) {
-            System.out.println(x);	    
-        }
-        catch (IllegalAccessException x) {
-            System.out.println(x);	    
-        }
+        catch (ClassNotFoundException x) {}
+        catch (NoSuchMethodException x) {}
+        catch (InstantiationException x) {}
+        catch (InvocationTargetException x) {}
+        catch (IllegalAccessException x) {}
 
         System.out.printf( 
             "%s\t %s %s, I presume.%n", 
